@@ -1,0 +1,90 @@
+═══════════════════════════════════════════════════════════════════
+        ⚠️ SETUP MONGODB ĐỂ CHẠY WEB BÁN GIÀY
+═══════════════════════════════════════════════════════════════════
+
+MongoDB chưa được cài đặt trên máy của bạn. Có 2 cách:
+
+═══════════════════════════════════════════════════════════════════
+
+📌 CÁCH 1: MONGODB ATLAS (CLOUD - DỄ NHẤT) ⭐
+
+Bước 1: Đăng ký miễn phí
+  → Vào: https://www.mongodb.com/cloud/atlas
+  → Click "Try Free"
+  → Đăng ký tài khoản
+
+Bước 2: Tạo Cluster
+  → Chọn "M0 Sandbox" (Free)
+  → Chọn region gần Việt Nam (Singapore)
+  → Click "Create Cluster"
+
+Bước 3: Setup Database Access
+  → Security → Database Access
+  → Add New Database User
+  → Username: admin
+  → Password: (tự đặt password)
+  → Database User Privileges: Atlas admin
+  → Add User
+
+Bước 4: Setup Network Access
+  → Security → Network Access
+  → Add IP Address
+  → Chọn "Allow Access from Anywhere" (0.0.0.0/0)
+  → Confirm
+
+Bước 5: Lấy Connection String
+  → Click "Connect" trên cluster
+  → Chọn "Connect your application"
+  → Copy connection string
+  → Sửa lại password trong string
+
+Ví dụ:
+  mongodb+srv://admin:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
+
+Bước 6: Cập nhật file .env
+  → Mở file .env
+  → Thay dòng MONGODB_URI bằng connection string của bạn
+
+Bước 7: Chạy lại
+  → npm run seed
+  → npm run dev
+
+═══════════════════════════════════════════════════════════════════
+
+📌 CÁCH 2: CÀI MONGODB LOCAL
+
+macOS (Homebrew):
+  brew tap mongodb/brew
+  brew install mongodb-community
+  brew services start mongodb-community
+
+Kiểm tra:
+  mongosh
+
+Windows:
+  → Tải từ: https://www.mongodb.com/try/download/community
+  → Cài đặt .msi file
+  → MongoDB tự động chạy
+
+Linux:
+  sudo apt-get update
+  sudo apt-get install mongodb
+  sudo systemctl start mongodb
+
+═══════════════════════════════════════════════════════════════════
+
+💡 KHUYÊN DÙNG: MongoDB Atlas (Cách 1)
+
+✅ Miễn phí
+✅ Không cần cài đặt
+✅ Hoạt động mọi nơi
+✅ Dễ setup
+✅ Có backup tự động
+
+═══════════════════════════════════════════════════════════════════
+
+Sau khi setup xong, chạy:
+  npm run seed
+  npm run dev
+
+═══════════════════════════════════════════════════════════════════

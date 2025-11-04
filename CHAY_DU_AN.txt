@@ -1,0 +1,96 @@
+═══════════════════════════════════════════════════════════════════
+           🩰 SHOE STORE - HƯỚNG DẪN CHẠY DỰ ÁN
+═══════════════════════════════════════════════════════════════════
+
+📌 BƯỚC 1: CÀI ĐẶT MONGODB
+
+Option A - MongoDB Local (Khuyên dùng):
+  - macOS: brew install mongodb-community
+  - Windows: Tải từ mongodb.com
+  - Linux: sudo apt-get install mongodb
+
+Option B - MongoDB Atlas (Cloud - Dễ nhất):
+  - Đăng ký tại mongodb.com/cloud/atlas
+  - Tạo cluster miễn phí
+  - Copy connection string vào file .env
+
+═══════════════════════════════════════════════════════════════════
+
+📌 BƯỚC 2: SEED DỮ LIỆU
+
+Chạy lệnh này để tạo 5 categories và 10 giày mẫu:
+
+    npm run seed
+
+Kết quả mong đợi:
+    ✅ Cleared existing data
+    ✅ Created categories
+    ✅ Created shoes
+    🎉 Seed data completed successfully!
+
+═══════════════════════════════════════════════════════════════════
+
+📌 BƯỚC 3: CHẠY ỨNG DỤNG
+
+Terminal 1 - Backend:
+    npm run dev
+
+✅ Backend chạy tại: http://localhost:5000
+✅ Console sẽ hiện: "🚀 Shoe Store Server is running"
+
+
+Terminal 2 - Frontend:
+    cd client
+    npm start
+
+✅ Frontend tự động mở: http://localhost:3000
+✅ Browser sẽ tự động mở trang chủ
+
+═══════════════════════════════════════════════════════════════════
+
+✅ KIỂM TRA
+
+Khi chạy thành công, bạn sẽ thấy:
+  ✓ 10 sản phẩm giày hiển thị
+  ✓ 5 danh mục ở menu trên
+  ✓ Có thể click vào giày để xem chi tiết
+  ✓ Có thể tìm kiếm, filter, sort
+  ✓ Giao diện đẹp, responsive
+
+═══════════════════════════════════════════════════════════════════
+
+🐛 XỬ LÝ LỖI THƯỜNG GẶP
+
+Lỗi: "Cannot connect to MongoDB"
+→ MongoDB chưa chạy hoặc connection string sai
+→ Kiểm tra: mongosh hoặc mongo
+
+Lỗi: "Port 5000 already in use"
+→ Kill process: lsof -i :5000 && kill -9 <PID>
+→ Hoặc đổi port trong file .env
+
+Lỗi: "Cannot find module"
+→ Xóa và cài lại: rm -rf node_modules && npm install
+
+═══════════════════════════════════════════════════════════════════
+
+📚 TÀI LIỆU THAM KHẢO
+
+- README.md - Tài liệu đầy đủ
+- QUICK_START.md - Hướng dẫn nhanh
+- PROJECT_SUMMARY.md - Tổng kết dự án
+
+═══════════════════════════════════════════════════════════════════
+
+💡 TIPS
+
+- Mở 2 terminal riêng để chạy backend và frontend
+- Dùng MongoDB Atlas cho dễ setup
+- Đọc code trong server.js và App.tsx để học
+- Thử thay đổi CSS trong App.css
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 CHÚC BẠN HỌC VUI VẺ!
+
+═══════════════════════════════════════════════════════════════════
